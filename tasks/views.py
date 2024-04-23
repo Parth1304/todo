@@ -43,3 +43,6 @@ def deleteTask(request,pk):
     
     context = {'item': item}
     return render(request, 'tasks/delete.html')
+
+def test(request):
+    return HttpResponse("test page")
