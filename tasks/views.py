@@ -17,13 +17,11 @@ def index(request):
 			form.save()
 		return redirect('/')
 
-
 	context = {'tasks':tasks, 'form':form}
 	return render(request, 'tasks/list.html', context)
 
 def updateTask(request, pk):
 	task = Task.objects.get(id=pk)
-
 	form = TaskForm(instance=task)
 
 	if request.method == 'POST':
@@ -41,8 +39,5 @@ def deleteTask(request,pk):
     item.delete()
     return redirect('/')
     
-    context = {'item': item}
-    return render(request, 'tasks/delete.html')
+   
 
-def test(request):
-    return HttpResponse("test page")
